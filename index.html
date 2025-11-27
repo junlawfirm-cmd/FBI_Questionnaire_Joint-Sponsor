@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Permanent Residency Questionnaire – Joint Sponsor</title>
+<style>
+  :root {
+    --cobalt-blue: #0047ab;
+    --cobalt-blue-soft: #e8f0ff;
+    --gold: #d4af37;
+    --gold-soft: #fff7dd;
+    --text-main: #1f2933;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    margin: 40px auto;
+    max-width: 900px;
+    line-height: 1.6;
+    color: var(--text-main);
+    background: #f7f9fc;
+  }
+
+  h1, h2, h3, h4 {
+    margin: 0 0 10px 0;
+  }
+
+  .header-box {
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, var(--cobalt-blue), #001f4f);
+    color: #ffffff;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .header-box h1 {
+    font-size: 24px;
+    letter-spacing: 0.03em;
+  }
+
+  .header-sub {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #f5f5f5;
+  }
+
+  .header-contact {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  .header-contact span {
+    display: inline-block;
+    margin-right: 16px;
+  }
+
+  .motto-label {
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  .form-wrapper {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px 26px 30px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  }
+
+  .form-title {
+    border-left: 5px solid var(--gold);
+    padding-left: 10px;
+    margin-bottom: 12px;
+  }
+
+  .form-note {
+    font-size: 13px;
+    background: var(--gold-soft);
+    border-radius: 8px;
+    padding: 10px 12px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    margin-bottom: 20px;
+  }
+
+  fieldset {
+    border: 1px solid rgba(0, 71, 171, 0.25);
+    padding: 18px 18px 16px;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    background: #ffffff;
+  }
+
+  legend {
+    font-weight: 700;
+    padding: 0 8px;
+    color: var(--cobalt-blue);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  label span.caption {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  input[type=text],
+  input[type=date],
+  input[type=email],
+  input[type=tel],
+  input[type=number],
+  select,
+  textarea {
+    width: 100%;
+    max-width: 620px;
+    padding: 9px 10px;
+    border: 1px solid #cbd2e1;
+    border-radius: 6px;
+    margin-top: 3px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 70px;
+  }
+
+  input[type=text]:focus,
+  input[type=date]:focus,
+  input[type=email]:focus,
+  input[type=tel]:focus,
+  input[type=number]:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--cobalt-blue);
+    box-shadow: 0 0 0 2px rgba(0, 71, 171, 0.18);
+  }
+
+  .inline-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .inline-group input[type=radio] {
+    margin-right: 4px;
+  }
+
+  .height-group input[type=number] {
+    max-width: 120px;
+    display: inline-block;
+  }
+
+  .submit-btn {
+    background: var(--cobalt-blue);
+    color: #ffffff;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    box-shadow: 0 8px 16px rgba(0, 71, 171, 0.4);
+    transition: transform 0.08s ease-out, box-shadow 0.08s ease-out, background 0.1s;
+  }
+
+  .submit-btn:hover {
+    background: #003580;
+    box-shadow: 0 10px 20px rgba(0, 53, 128, 0.55);
+    transform: translateY(-1px);
+  }
+
+  .submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 53, 128, 0.4);
+  }
+
+  .cert-text {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .required-hint {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 14px;
+  }
+
+  @media (max-width: 640px) {
+    body {
+      margin: 20px;
+    }
+    .form-wrapper {
+      padding: 18px 16px 22px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="header-box">
+  <h1>Law Office of Hong-min Jun</h1>
+  <div class="header-sub">
+    <span class="motto-label">Motto:</span> Attorneys for Foreign-Born Individuals and Small Business Owners!
+  </div>
+  <div class="header-contact">
+    <span><strong>Location:</strong> Fishers, Indiana (Hamilton County)</span><br>
+    <span><strong>Email:</strong> askus@junlawfirm.com</span><br>
+    <span><strong>Phone:</strong> 847-660-4233 &nbsp;|&nbsp; 317-701-2768</span>
+  </div>
+</div>
+
+<div class="form-wrapper">
+  <div class="form-title">
+    <h2>Permanent Residency Questionnaire – Joint Sponsor</h2>
+  </div>
+  <p class="required-hint">Fields may be completed in English. If any question does not apply, please write "N/A".</p>
+  <div class="form-note">
+    Joint Sponsor must be a U.S. citizen or Lawful Permanent Resident currently living in the United States and agreeing to financially sponsor the immigrant.
+  </div>
+
+  <form action="https://formsubmit.co/askus@junlawfirm.com" method="POST">
+    <input type="hidden" name="_subject" value="Permanent Residency Questionnaire - Joint Sponsor">
+    <input type="hidden" name="_template" value="table">
+
+    <!-- BASIC INFORMATION -->
+    <fieldset>
+      <legend>Basic Information</legend>
+
+      <label>
+        <span class="caption">Last Name</span>
+        <input type="text" name="Last Name" required>
+      </label>
+
+      <label>
+        <span class="caption">First Name</span>
+        <input type="text" name="First Name" required>
+      </label>
+
+      <label>
+        <span class="caption">Middle Name</span>
+        <input type="text" name="Middle Name">
+      </label>
+
+      <label>
+        <span class="caption">Other Name Used Before (maiden, nickname, etc.)</span>
+        <input type="text" name="Other Names Used Before">
+      </label>
+
+      <label>
+        <span class="caption">Sex</span>
+        <div class="inline-group">
+          <label><input type="radio" name="Sex" value="M"> M</label>
+          <label><input type="radio" name="Sex" value="F"> F</label>
+        </div>
+      </label>
+
+      <label>
+        <span class="caption">Date of Birth</span>
+        <input type="date" name="Date of Birth">
+      </label>
+
+      <h3>Place of Birth</h3>
+
+      <label>
+        <span class="caption">City</span>
+        <input type="text" name="Place of Birth - City">
+      </label>
+
+      <label>
+        <span class="caption">State/Province</span>
+        <input type="text" name="Place of Birth - State/Province">
+      </label>
+
+      <label>
+        <span class="caption">Country</span>
+        <input type="text" name="Place of Birth - Country">
+      </label>
+
+      <h3>If you are a U.S. Citizen</h3>
+
+      <label>
+        <span class="caption">How did you obtain U.S. citizenship?</span>
+        <select name="How did you get US citizenship">
+          <option value="">Select</option>
+          <option value="Birth">By Birth</option>
+          <option value="Naturalization">Naturalization</option>
+          <option value="LPR">Through Lawful Permanent Residence</option>
+          <option value="N/A">N/A</option>
+        </select>
+      </label>
+
+      <h3>If you are a Green Card holder (LPR)</h3>
+
+      <label>
+        <span class="caption">Issuance Place</span>
+        <input type="text" name="LPR Issuance Place">
+      </label>
+
+      <label>
+        <span class="caption">Date of Issuance</span>
+        <input type="date" name="LPR Date of Issuance">
+      </label>
+
+      <label>
+        <span class="caption">Residency gained through marriage to a U.S. Citizen?</span>
+        <div class="inline-group">
+          <label><input type="radio" name="Residency through USC spouse" value="Yes"> Yes</label>
+          <label><input type="radio" name="Residency through USC spouse" value="No"> No</label>
+        </div>
+      </label>
+
+      <label>
+        <span class="caption">Residency gained through marriage to a Lawful Permanent Resident?</span>
+        <div class="inline-group">
+          <label><input type="radio" name="Residency through LPR spouse" value="Yes"> Yes</label>
+          <label><input type="radio" name="Residency through LPR spouse" value="No"> No</label>
+        </div>
+      </label>
+
+      <h3>If you are a Naturalized Citizen</h3>
+
+      <label>
+        <span class="caption">Issuance Place (City &amp; State)</span>
+        <input type="text" name="Naturalization Issuance Place">
+      </label>
+
+      <label>
+        <span class="caption">Certificate Number</span>
+        <input type="text" name="Naturalization Certificate Number">
+      </label>
+    </fieldset>
+
+    <!-- ADDRESSES -->
+    <fieldset>
+      <legend>Addresses</legend>
+
+      <h3>Current Physical Address</h3>
+
+      <label>
+        <span class="caption">Street</span>
+        <input type="text" name="Physical Address - Street">
+      </label>
+
+      <label>
+        <span class="caption">Apt / Ste / Flr</span>
+        <input type="text" name="Physical Address - Apt/Ste/Flr">
+      </label>
+
+      <label>
+        <span class="caption">City</span>
+        <input type="text" name="Physical Address - City">
+      </label>
+
+      <label>
+        <span class="caption">State / Province</span>
+        <input type="text" name="Physical Address - State/Province">
+      </label>
+
+      <label>
+        <span class="caption">Zip / Postal Code</span>
+        <input type="text" name="Physical Address - Zip">
+      </label>
+
+      <label>
+        <span class="caption">Living at this address since</span>
+        <input type="date" name="Physical Address - Since">
+      </label>
+
+      <h3>Mailing Address</h3>
+
+      <label>
+        <span class="caption">Street</span>
+        <input type="text" name="Mailing Address - Street">
+      </label>
+
+      <label>
+        <span class="caption">Apt / Ste / Flr</span>
+        <input type="text" name="Mailing Address - Apt/Ste/Flr">
+      </label>
+
+      <label>
+        <span class="caption">City</span>
+        <input type="text" name="Mailing Address - City">
+      </label>
+
+      <label>
+        <span class="caption">State</span>
+        <input type="text" name="Mailing Address - State">
+      </label>
+
+      <label>
+        <span class="caption">Zip Code</span>
+        <input type="text" name="Mailing Address - Zip Code">
+      </label>
+
+      <label>
+        <span class="caption">This mailing address is good until</span>
+        <input type="date" name="Mailing Address - Good Until">
+      </label>
+    </fieldset>
+
+    <!-- IDENTIFIERS & CONTACT -->
+    <fieldset>
+      <legend>Identifiers &amp; Contact</legend>
+
+      <label>
+        <span class="caption">Social Security Number</span>
+        <input type="text" name="SSN">
+      </label>
+
+      <label>
+        <span class="caption">A-Number (if any)</span>
+        <input type="text" name="A-Number">
+      </label>
+
+      <label>
+        <span class="caption">USCIS Online Account Number (if any)</span>
+        <input type="text" name="USCIS Account Number">
+      </label>
+
+      <label>
+        <span class="caption">Phone Number</span>
+        <input type="tel" name="Phone Number">
+      </label>
+
+      <label>
+        <span class="caption">Email Address</span>
+        <input type="email" name="Email Address">
+      </label>
+
+      <label>
+        <span class="caption">Hispanic or Latino</span>
+        <div class="inline-group">
+          <label><input type="radio" name="Hispanic or Latino" value="Yes"> Yes</label>
+          <label><input type="radio" name="Hispanic or Latino" value="No"> No</label>
+        </div>
+      </label>
+
+      <label>
+        <span class="caption">Race</span>
+        <input type="text" name="Race">
+      </label>
+
+      <label>
+        <span class="caption">Eye Color</span>
+        <input type="text" name="Eye Color">
+      </label>
+
+      <label>
+        <span class="caption">Hair Color</span>
+        <input type="text" name="Hair Color">
+      </label>
+
+      <label>
+        <span class="caption">Height (Feet / Inches)</span>
+        <div class="height-group">
+          <input type="number" name="Height - Feet" placeholder="Feet" min="0">
+          <input type="number" name="Height - Inches" placeholder="Inches" min="0">
+        </div>
+      </label>
+
+      <label>
+        <span class="caption">Weight (LB)</span>
+        <input type="number" name="Weight (LB)" min="0">
+      </label>
+
+      <label>
+        <span class="caption">Active duty U.S. Armed Forces or U.S. Coast Guard?</span>
+        <div class="inline-group">
+          <label><input type="radio" name="Military" value="Yes"> Yes</label>
+          <label><input type="radio" name="Military" value="No"> No</label>
+        </div>
+      </label>
+    </fieldset>
+
+    <!-- EMPLOYMENT / RETIREMENT / UNEMPLOYMENT -->
+    <fieldset>
+      <legend>Employment / Retirement / Unemployment</legend>
+
+      <label>
+        <span class="caption">Employer Name</span>
+        <input type="text" name="Employer Name">
+      </label>
+
+      <label>
+        <span class="caption">Occupation</span>
+        <input type="text" name="Occupation">
+      </label>
+
+      <label>
+        <span class="caption">Employer Address</span>
+        <textarea name="Employer Address"></textarea>
+      </label>
+
+      <label>
+        <span class="caption">If retired, retired since</span>
+        <input type="date" name="Retired Since">
+      </label>
+
+      <label>
+        <span class="caption">If unemployed, unemployed since</span>
+        <input type="date" name="Unemployed Since">
+      </label>
+    </fieldset>
+
+    <!-- HOUSEHOLD / TAX -->
+    <fieldset>
+      <legend>Household &amp; Tax</legend>
+
+      <label>
+        <span class="caption">Marital Status</span>
+        <div class="inline-group">
+          <label><input type="radio" name="Marital Status" value="Single, never married"> Single, never married</label>
+          <label><input type="radio" name="Marital Status" value="Married"> Married</label>
+          <label><input type="radio" name="Marital Status" value="Divorced"> Divorced</label>
+          <label>
+            <input type="radio" name="Marital Status" value="Other"> Other
+          </label>
+        </div>
+      </label>
+
+      <label>
+        <span class="caption">If Other, please explain</span>
+        <input type="text" name="Marital Status - Other Detail">
+      </label>
+
+      <label>
+        <span class="caption">Number of dependents in your household</span>
+        <input type="number" name="Number of Dependents" min="0">
+      </label>
+
+      <label>
+        <span class="caption">Did you file Federal Income Tax Returns for the most recent 3 years?</span>
+        <div class="inline-group">
+          <label><input type="radio" name="Filed Fed Income Tax Return last 3 years" value="Yes"> Yes</label>
+          <label><input type="radio" name="Filed Fed Income Tax Return last 3 years" value="No"> No</label>
+        </div>
+      </label>
+    </fieldset>
+
+    <!-- CERTIFICATION & SIGNATURE -->
+    <fieldset>
+      <legend>Certification &amp; Signature</legend>
+
+      <p class="cert-text">
+        By signing below, I certify that all information provided in this questionnaire is true and correct to the best of my knowledge. I understand that any error or omission may delay the preparation of my immigration forms.
+      </p>
+
+      <label>
+        <span class="caption">Your Name (Printed)</span>
+        <input type="text" name="Your Name (Printed)" required>
+      </label>
+
+      <label>
+        <span class="caption">Signature (type your full name)</span>
+        <input type="text" name="Signature" required>
+      </label>
+
+      <label>
+        <span class="caption">Date</span>
+        <input type="date" name="Signature Date" required>
+      </label>
+    </fieldset>
+
+    <button class="submit-btn" type="submit">Submit Questionnaire</button>
+  </form>
+</div>
+
+</body>
+</html>
